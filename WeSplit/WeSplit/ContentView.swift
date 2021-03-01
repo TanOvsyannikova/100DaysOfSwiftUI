@@ -16,18 +16,24 @@ struct ContentView: View {
     
     var total: Double {
         let tipSelection = Double(tipPercentages[tipPercentage])
-        let orderAmount = Double(checkAmount.replacingOccurrences(of: ",", with: ".")) ?? 0
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .decimal
+        let orderAmount = Double(truncating: formatter.number(from: checkAmount) ?? 0.0)
         let tipValue = orderAmount * tipSelection / 100
         let totalAmount = orderAmount + tipValue
         
         return totalAmount
     }
     
-    var totalPerPerson: Double {
-        let peopleCount = Int(numberOfPeople) ?? 1
-        let amountPerPerson = total / Double(peopleCount)
+    var totalPerPerson: String {
+        let peopleCount = Double(numberOfPeople) ?? 1
+        let amountPerPerson = total / peopleCount
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
         
-        return amountPerPerson
+        return formatter.string(from: NSNumber(value: amountPerPerson)) ?? ""
     }
     
     
@@ -59,7 +65,7 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Amount per person")) {
-                    Text("$\(totalPerPerson, specifier: "%.2f")")
+                    Text(totalPerPerson)
                 }
             }
             .navigationBarTitle("WeSplit")
