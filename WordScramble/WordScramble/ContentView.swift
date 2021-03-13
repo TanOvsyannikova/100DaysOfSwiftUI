@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
+    @State private var totalCount = 0
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
@@ -23,16 +24,24 @@ struct ContentView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                
                 
                 List(usedWords, id: \.self) {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
             }
-            .navigationBarTitle(rootWord)
+            .navigationTitle(rootWord)
+            .navigationBarItems(
+                leading: Text("Total: \(totalCount)").font(.headline),
+
+                trailing: Button(action: startGame, label: { Image(systemName: "arrow.clockwise") })
+            )
             .onAppear(perform: {
                 startGame()
             })
+            
             .alert(isPresented: $showingError) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
@@ -61,10 +70,17 @@ struct ContentView: View {
         }
         
         usedWords.insert(answer, at: 0)
+        totalCount += answer.count
         newWord = ""
     }
     
+    
+    
+    
     func startGame() {
+        totalCount = 0
+        usedWords = []
+        
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             
             if let startWords = try? String(contentsOf: startWordsURL) {
@@ -97,6 +113,11 @@ struct ContentView: View {
     }
     
     func isReal(word: String) -> Bool {
+        
+        guard word.count >= 3 && word != rootWord else {
+                    return false
+                }
+        
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
