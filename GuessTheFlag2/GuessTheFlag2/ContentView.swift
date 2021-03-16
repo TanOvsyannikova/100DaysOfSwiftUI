@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var animated = false
+    @State var selected = false
     
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     
@@ -35,50 +37,74 @@ struct ContentView: View {
                 
                 ForEach (0 ..< 3) { number in
                     Button(action: {
+                        withAnimation(.easeOut(duration: 0.5)) {
+                            self.animated = true
+                        }
+                        
+                    
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         flagTapped(number)
+                    }
+                    
+                    
                     }) {
                         Image(self.countries[number])
                             .renderingMode(.original)
                             .border(Color.gray, width: 1)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                             .shadow(radius: 10)
+                            .rotation3DEffect(.degrees(flagTappedIsCorrect(number) && animated ? 360 : 0.0), axis: (x: 0, y: 1, z: 0))
+                            .opacity(!flagTappedIsCorrect(number) && animated ? 0.25 : 1)
+                        
+                        
                     }
-                    
-                }
                 
-                Text("Your current score is: \(score)")
-                Text("\(counter)/10")
             }
-        }
-        
-        .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("Your final score is: \(score)"), dismissButton: .default(Text("Restart")) {
-                score = 0
-                self.askQuestion()
-            })
+            
+            Text("Your current score is: \(score)")
+            Text("\(counter)/10")
         }
     }
     
-    func flagTapped(_ number: Int) {
-        if number == correctAnswer {
-            score += 1
-        }
-        
-        counter += 1
-        
-        if counter > totalQuestions {
-            counter = 1
-            showingScore = true
-        }
-        
-        self.askQuestion()
+    .alert(isPresented: $showingScore) {
+    Alert(title: Text(scoreTitle), message: Text("Your final score is: \(score)"), dismissButton: .default(Text("Restart")) {
+    score = 0
+    self.askQuestion()
+    })
+    }
+}
+
+func flagTappedIsCorrect(_ number: Int) -> Bool {
+    if number == correctAnswer {
+        return true
+    }
+    return false
+}
+
+
+
+func flagTapped(_ number: Int) {
+    if flagTappedIsCorrect(number) {
+        score += 1
     }
     
-    func askQuestion() {
-        countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+    counter += 1
+    
+    if counter > totalQuestions {
+        counter = 1
+        showingScore = true
     }
     
+    self.askQuestion()
+}
+
+func askQuestion() {
+    animated = false
+    countries.shuffle()
+    correctAnswer = Int.random(in: 0...2)
+}
+
 }
 
 struct ContentView_Previews: PreviewProvider {
