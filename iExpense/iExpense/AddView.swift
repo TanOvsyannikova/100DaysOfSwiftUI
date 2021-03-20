@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+extension String {
+    static let numberFormatter = NumberFormatter()
+    var doubleValue: Double? {
+        String.numberFormatter.decimalSeparator = "."
+        if let result =  String.numberFormatter.number(from: self) {
+            return result.doubleValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result = String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            }
+        }
+        return nil
+    }
+}
+
 struct AddView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var expenses: Expenses
@@ -29,11 +45,11 @@ struct AddView: View {
                 }
                 
                 TextField("Amount", text: $amount)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.decimalPad)
             }
             .navigationBarTitle("Add new expense")
             .navigationBarItems(trailing: Button("Save") {
-                if let actualAmount = Int(self.amount) {
+                if let actualAmount = self.amount.doubleValue {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     
                     self.expenses.items.append(item)

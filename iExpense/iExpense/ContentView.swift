@@ -10,7 +10,7 @@ import SwiftUI
 struct ExpenseItem: Identifiable, Codable {
     let name: String
     let type: String
-    let amount: Int
+    let amount: Double
     var id = UUID()
 }
 
@@ -54,9 +54,9 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        Text("$\(item.amount)")
-                            .foregroundColor(item.amount < 10 ? .green : (item.amount < 100 ? .orange : .red))
-                            .fontWeight(item.amount > 100 ? .bold : nil)
+                        Text("$\(item.amount, specifier: "%.2f")")
+                            .foregroundColor(item.amount < 10.0 ? .green : (item.amount < 100.0 ? .orange : .red))
+                            .fontWeight(item.amount > 100.0 ? .bold : nil)
                     }
                 }
                 .onDelete(perform: removeItems)
