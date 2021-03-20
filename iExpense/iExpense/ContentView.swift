@@ -53,7 +53,10 @@ struct ContentView: View {
                         }
                         
                         Spacer()
+                        
                         Text("$\(item.amount)")
+                            .foregroundColor(item.amount < 10 ? .green : (item.amount < 100 ? .orange : .red))
+                            .fontWeight(item.amount > 100 ? .bold : nil)
                     }
                 }
                 .onDelete(perform: removeItems)
@@ -77,6 +80,7 @@ struct ContentView: View {
     func removeItems(at offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -13,6 +13,8 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = ""
+    @State private var showingAlert = false
+    
     static let types = ["Business", "Personal"]
     
     var body: some View {
@@ -36,9 +38,13 @@ struct AddView: View {
                     
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    showingAlert = true
                 }
             })
-            
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Oops"), message: Text("You should enter a real price"), dismissButton: .default(Text("ok")))
         }
     }
 }
