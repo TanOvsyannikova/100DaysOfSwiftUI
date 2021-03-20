@@ -19,20 +19,20 @@ class Expenses: ObservableObject {
         didSet {
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(items) {
-                        UserDefaults.standard.set(encoded, forKey: "Items")
+                UserDefaults.standard.set(encoded, forKey: "Items")
             }
         }
     }
     init() {
         if let items = UserDefaults.standard.data(forKey: "Items") {
-                let decoder = JSONDecoder()
-                if let decoded = try? decoder.decode([ExpenseItem].self, from: items) {
-                    self.items = decoded
-                    return
-                }
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([ExpenseItem].self, from: items) {
+                self.items = decoded
+                return
             }
-
-            self.items = []
+        }
+        
+        self.items = []
         
     }
 }
@@ -58,13 +58,15 @@ struct ContentView: View {
                 }
                 .onDelete(perform: removeItems)
             }
+            
             .navigationBarTitle("iExpense")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showingAddExpense = true
-                }) {
-                    Image(systemName: "plus")
-                }
+            .navigationBarItems(leading: EditButton(), trailing:
+                                    Button(action: {
+                                        self.showingAddExpense = true
+                                    }) {
+                                        Image(systemName: "plus")
+                                    }
+                                
             )
             .sheet(isPresented: $showingAddExpense) {
                 AddView(expenses: self.expenses)
