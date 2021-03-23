@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		278F5AF7260A6915002E7E34 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F5AF6260A6915002E7E34 /* MissionView.swift */; };
+		278F5AFA260A7827002E7E34 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F5AF9260A7827002E7E34 /* AstronautView.swift */; };
 		27F5F5C2260746A300DACF2C /* MoonshotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5F5C1260746A300DACF2C /* MoonshotApp.swift */; };
 		27F5F5C4260746A300DACF2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5F5C3260746A300DACF2C /* ContentView.swift */; };
 		27F5F5C6260746A400DACF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5F5C5260746A400DACF2C /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		278F5AF6260A6915002E7E34 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		278F5AF9260A7827002E7E34 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 		27F5F5BE260746A300DACF2C /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F5F5C1260746A300DACF2C /* MoonshotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonshotApp.swift; sourceTree = "<group>"; };
 		27F5F5C3260746A300DACF2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				27F5F5C1260746A300DACF2C /* MoonshotApp.swift */,
 				27F5F5C3260746A300DACF2C /* ContentView.swift */,
+				278F5AF9260A7827002E7E34 /* AstronautView.swift */,
 				278F5AF6260A6915002E7E34 /* MissionView.swift */,
 				27F5F5C5260746A400DACF2C /* Assets.xcassets */,
 				27F5F5CA260746A400DACF2C /* Info.plist */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278F5AFA260A7827002E7E34 /* AstronautView.swift in Sources */,
 				27F5F5DB260770AB00DACF2C /* Astronaut.swift in Sources */,
 				27F5F5C4260746A300DACF2C /* ContentView.swift in Sources */,
 				27F5F5C2260746A300DACF2C /* MoonshotApp.swift in Sources */,
