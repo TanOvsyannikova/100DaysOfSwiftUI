@@ -12,6 +12,7 @@
 		27626997260D03CF0026AD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27626996260D03CF0026AD96 /* Assets.xcassets */; };
 		2762699A260D03CF0026AD96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27626999260D03CF0026AD96 /* Preview Assets.xcassets */; };
 		277EC3A4260E5904009A32DC /* SecondPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EC3A3260E5904009A32DC /* SecondPart.swift */; };
+		277EC3A8260E640E009A32DC /* ColorCyclingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EC3A7260E640E009A32DC /* ColorCyclingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		27626999260D03CF0026AD96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2762699B260D03CF0026AD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277EC3A3260E5904009A32DC /* SecondPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPart.swift; sourceTree = "<group>"; };
+		277EC3A7260E640E009A32DC /* ColorCyclingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				27626992260D03CE0026AD96 /* DrawingApp.swift */,
 				27626994260D03CE0026AD96 /* ContentView.swift */,
 				277EC3A3260E5904009A32DC /* SecondPart.swift */,
+				277EC3A7260E640E009A32DC /* ColorCyclingView.swift */,
 				27626996260D03CF0026AD96 /* Assets.xcassets */,
 				2762699B260D03CF0026AD96 /* Info.plist */,
 				27626998260D03CF0026AD96 /* Preview Content */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277EC3A8260E640E009A32DC /* ColorCyclingView.swift in Sources */,
 				27626995260D03CE0026AD96 /* ContentView.swift in Sources */,
 				27626993260D03CE0026AD96 /* DrawingApp.swift in Sources */,
 				277EC3A4260E5904009A32DC /* SecondPart.swift in Sources */,
