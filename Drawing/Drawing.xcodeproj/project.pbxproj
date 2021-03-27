@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27286372260FB789005F9D12 /* ThirdPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27286371260FB789005F9D12 /* ThirdPart.swift */; };
+		27286375260FBC9B005F9D12 /* AnimatedShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27286374260FBC9B005F9D12 /* AnimatedShapes.swift */; };
 		27626993260D03CE0026AD96 /* DrawingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27626992260D03CE0026AD96 /* DrawingApp.swift */; };
 		27626995260D03CE0026AD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27626994260D03CE0026AD96 /* ContentView.swift */; };
 		27626997260D03CF0026AD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27626996260D03CF0026AD96 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		27286371260FB789005F9D12 /* ThirdPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPart.swift; sourceTree = "<group>"; };
+		27286374260FBC9B005F9D12 /* AnimatedShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedShapes.swift; sourceTree = "<group>"; };
 		2762698F260D03CE0026AD96 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27626992260D03CE0026AD96 /* DrawingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApp.swift; sourceTree = "<group>"; };
 		27626994260D03CE0026AD96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				277EC3A3260E5904009A32DC /* SecondPart.swift */,
 				277EC3A7260E640E009A32DC /* ColorCyclingView.swift */,
 				27286371260FB789005F9D12 /* ThirdPart.swift */,
+				27286374260FBC9B005F9D12 /* AnimatedShapes.swift */,
 				27626996260D03CF0026AD96 /* Assets.xcassets */,
 				2762699B260D03CF0026AD96 /* Info.plist */,
 				27626998260D03CF0026AD96 /* Preview Content */,
@@ -149,6 +152,7 @@
 			files = (
 				277EC3A8260E640E009A32DC /* ColorCyclingView.swift in Sources */,
 				27286372260FB789005F9D12 /* ThirdPart.swift in Sources */,
+				27286375260FBC9B005F9D12 /* AnimatedShapes.swift in Sources */,
 				27626995260D03CE0026AD96 /* ContentView.swift in Sources */,
 				27626993260D03CE0026AD96 /* DrawingApp.swift in Sources */,
 				277EC3A4260E5904009A32DC /* SecondPart.swift in Sources */,
