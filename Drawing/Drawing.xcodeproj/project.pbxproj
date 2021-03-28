@@ -11,6 +11,8 @@
 		27286375260FBC9B005F9D12 /* AnimatedShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27286374260FBC9B005F9D12 /* AnimatedShapes.swift */; };
 		27286378260FBF30005F9D12 /* AnimatedComplexShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27286377260FBF30005F9D12 /* AnimatedComplexShapes.swift */; };
 		2728637B260FC237005F9D12 /* SpirographView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728637A260FC237005F9D12 /* SpirographView.swift */; };
+		2728637F261083E5005F9D12 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728637E261083E5005F9D12 /* ArrowView.swift */; };
+		27286383261090F7005F9D12 /* ColorCyclingRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27286382261090F7005F9D12 /* ColorCyclingRectangleView.swift */; };
 		27626993260D03CE0026AD96 /* DrawingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27626992260D03CE0026AD96 /* DrawingApp.swift */; };
 		27626995260D03CE0026AD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27626994260D03CE0026AD96 /* ContentView.swift */; };
 		27626997260D03CF0026AD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27626996260D03CF0026AD96 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		27286374260FBC9B005F9D12 /* AnimatedShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedShapes.swift; sourceTree = "<group>"; };
 		27286377260FBF30005F9D12 /* AnimatedComplexShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedComplexShapes.swift; sourceTree = "<group>"; };
 		2728637A260FC237005F9D12 /* SpirographView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirographView.swift; sourceTree = "<group>"; };
+		2728637E261083E5005F9D12 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
+		27286382261090F7005F9D12 /* ColorCyclingRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingRectangleView.swift; sourceTree = "<group>"; };
 		2762698F260D03CE0026AD96 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27626992260D03CE0026AD96 /* DrawingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApp.swift; sourceTree = "<group>"; };
 		27626994260D03CE0026AD96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,10 +72,12 @@
 				27626994260D03CE0026AD96 /* ContentView.swift */,
 				277EC3A3260E5904009A32DC /* SecondPart.swift */,
 				277EC3A7260E640E009A32DC /* ColorCyclingView.swift */,
+				27286382261090F7005F9D12 /* ColorCyclingRectangleView.swift */,
 				27286371260FB789005F9D12 /* ThirdPart.swift */,
 				27286374260FBC9B005F9D12 /* AnimatedShapes.swift */,
 				27286377260FBF30005F9D12 /* AnimatedComplexShapes.swift */,
 				2728637A260FC237005F9D12 /* SpirographView.swift */,
+				2728637E261083E5005F9D12 /* ArrowView.swift */,
 				27626996260D03CF0026AD96 /* Assets.xcassets */,
 				2762699B260D03CF0026AD96 /* Info.plist */,
 				27626998260D03CF0026AD96 /* Preview Content */,
@@ -158,12 +164,14 @@
 			files = (
 				277EC3A8260E640E009A32DC /* ColorCyclingView.swift in Sources */,
 				27286372260FB789005F9D12 /* ThirdPart.swift in Sources */,
+				27286383261090F7005F9D12 /* ColorCyclingRectangleView.swift in Sources */,
 				2728637B260FC237005F9D12 /* SpirographView.swift in Sources */,
 				27286375260FBC9B005F9D12 /* AnimatedShapes.swift in Sources */,
 				27626995260D03CE0026AD96 /* ContentView.swift in Sources */,
 				27626993260D03CE0026AD96 /* DrawingApp.swift in Sources */,
 				277EC3A4260E5904009A32DC /* SecondPart.swift in Sources */,
 				27286378260FBF30005F9D12 /* AnimatedComplexShapes.swift in Sources */,
+				2728637F261083E5005F9D12 /* ArrowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
