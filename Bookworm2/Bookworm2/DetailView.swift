@@ -15,14 +15,22 @@ struct DetailView: View {
     
     let book: Book
     
+    var genre: String {
+            guard let genre = book.genre else { return "Other" }
+            guard !genre.isEmpty else { return "Other" }
+
+            return genre
+        }
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 ZStack(alignment: .bottomTrailing) {
-                    Image(self.book.genre ?? "Fantasy")
-                        .frame(maxWidth: geometry.size.width)
-                    
-                    Text(self.book.genre ?? "Fantasy")
+                    Image(self.genre)
+                        .resizable()
+                        .scaledToFit()
+                        
+                        Text(self.genre)
                         .font(.caption)
                         .fontWeight(.black)
                         .padding(8)
@@ -31,6 +39,7 @@ struct DetailView: View {
                         .clipShape(Capsule())
                         .offset(x: -5, y: -5)
                 }
+                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height / 3, alignment: .top)
                 
                 Text(self.book.author ?? "Unknown author")
                     .font(.title)
