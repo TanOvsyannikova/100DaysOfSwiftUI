@@ -16,6 +16,8 @@ struct AddBookView: View {
     @State private var rating = 3
     @State private var genre = ""
     @State private var review = ""
+    @State private var date = Date()
+
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
 
@@ -31,6 +33,13 @@ struct AddBookView: View {
                             Text($0)
                         }
                     }
+                    
+                    DatePicker(
+                            "Date",
+                            selection: $date,
+                            displayedComponents: [.date]
+                        )
+                    
                 }
 
                 Section {
@@ -47,6 +56,7 @@ struct AddBookView: View {
                         newBook.rating = Int16(self.rating)
                         newBook.genre = self.genre
                         newBook.review = self.review
+                        newBook.date = self.date
 
                         try? self.moc.save()
                         self.presentationMode.wrappedValue.dismiss()

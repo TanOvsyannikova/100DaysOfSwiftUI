@@ -21,6 +21,7 @@ struct PersistenceController {
             newItem.genre = "R"
             newItem.review = "good"
             newItem.rating = 5
+            newItem.date = Date()
         }
         do {
             try viewContext.save()
