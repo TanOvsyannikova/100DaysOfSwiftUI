@@ -14,19 +14,42 @@ struct  Student: Hashable {
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    let students = [Student(name: "Harry Potter"), Student(name: "Hermione Granger")]
+    @FetchRequest(entity: Wizard.entity(), sortDescriptors: [], predicate: NSPredicate(format: "name >= %@", "H")) var wizards: FetchedResults<Wizard>
+    
+    //let students = [Student(name: "Harry Potter"), Student(name: "Hermione Granger")]
     
     var body: some View {
-        List {
-            ForEach(students, id: \.self) { student in
-                Text(student.name)
-            }
-        }
-        Button("Save"){
-            if self.moc.hasChanges {
-                try? self.moc.save()
-            }
-        }
+//        List {
+//            ForEach(students, id: \.self) { student in
+//                Text(student.name)
+//            }
+//        }
+        VStack {
+                    List(wizards, id: \.self) { wizard in
+                        Text(wizard.name ?? "Unknown")
+                    }
+
+                    Button("Add") {
+                        let wizard = Wizard(context: self.moc)
+                        wizard.name = "Harry Potter"
+                        
+                        let wizard2 = Wizard(context: self.moc)
+                        wizard2.name = "Harry Pottah"
+                        
+                        let wizard3 = Wizard(context: self.moc)
+                        wizard3.name = "Draco Malfoy"
+                    }
+
+                    Button("Save") {
+                        if self.moc.hasChanges {
+                            do {
+                                try self.moc.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        }
+                    }
+                }
     }
 
     
