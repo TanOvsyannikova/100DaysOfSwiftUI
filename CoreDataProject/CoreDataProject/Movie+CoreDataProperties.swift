@@ -20,8 +20,16 @@ extension Movie {
     @NSManaged public var director: String?
     @NSManaged public var year: Int16
 
-    public var wrappedTitle: String {
-        title ?? "Unknown Title"
+//    public var wrappedTitle: String {
+//        title ?? "Unknown Title"
+//    }
+    
+    var wrappedTitle: String {
+        title ?? "Unknown"
+    }
+
+    var wrappedDirector: String {
+        director ?? "Unknown"
     }
 }
 
