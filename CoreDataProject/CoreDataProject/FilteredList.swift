@@ -7,22 +7,21 @@
 import CoreData
 import SwiftUI
 
-struct FilteredList: View {
-    var fetchRequest: FetchRequest<Movie>
+struct FilteredList<T: NSManagedObject, Content: View>: View {
+    var fetchRequest: FetchRequest<T>
+    var movies: FetchedResults<T> { fetchRequest.wrappedValue }
+
+    let content: (T) -> Content
     
     var body: some View {
         List(fetchRequest.wrappedValue, id: \.self) { movie in
-            Text("\(movie.wrappedTitle) \(movie.wrappedDirector)")
-            }
+                    self.content(movie)
+        }
     }
     
-    init(filter: String) {
-        fetchRequest = FetchRequest<Movie>(entity: Movie.entity(), sortDescriptors: [], predicate: NSPredicate(format: "title BEGINSWITH %@", filter))
-    }
+    init(filterKey: String, filterValue: String, @ViewBuilder content: @escaping (T) -> Content) {
+            fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: [], predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue))
+            self.content = content
+        }
 }
 
-struct FilteredList_Previews: PreviewProvider {
-    static var previews: some View {
-        FilteredList(filter: "A")
-    }
-}

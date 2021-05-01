@@ -34,7 +34,9 @@ struct ContentView: View {
                 Text(wizard.name ?? "Unknown")
             }
             
-            FilteredList(filter: titleFilter)
+            FilteredList(filterKey: "title", filterValue: titleFilter) { (movie: Movie) in
+                Text("\(movie.wrappedTitle) \(movie.wrappedDirector)")
+            }
             
             Button("Add") {
                 let wizard = Wizard(context: self.moc)
