@@ -31,7 +31,7 @@ struct ContentView: View {
     let amountPerPerson = total / peopleCount
     let formatter = NumberFormatter()
     formatter.locale = Locale.current
-    formatter.numberStyle = .currency
+    formatter.numberStyle = .decimal
     
     return formatter.string(from: NSNumber(value: amountPerPerson)) ?? ""
   }
@@ -57,7 +57,7 @@ struct ContentView: View {
           .pickerStyle(SegmentedPickerStyle())
         }
         Section(header: Text("Total")) {
-          Text("$\(total, specifier: "%.2f")")
+          Text("\(total, specifier: "%.2f")")
             .foregroundColor(tipPercentages[tipPercentage] == 0 ? .red : .primary)
         }
         Section(header: Text("Amount per person")) {
