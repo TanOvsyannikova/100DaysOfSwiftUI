@@ -15,6 +15,8 @@
 		2742C559263C7A740095135C /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2742C557263C7A740095135C /* CoreDataProject.xcdatamodeld */; };
 		2742C562263C801D0095135C /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742C560263C801D0095135C /* Movie+CoreDataClass.swift */; };
 		2742C563263C801D0095135C /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742C561263C801D0095135C /* Movie+CoreDataProperties.swift */; };
+		276DF3E42640526A00FB20DC /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DF3E32640526A00FB20DC /* ChallengesView.swift */; };
+		276DF3E62640546A00FB20DC /* FilteredListChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DF3E52640546A00FB20DC /* FilteredListChallenges.swift */; };
 		27DCA062263DC10800356C6C /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DCA061263DC10800356C6C /* FilteredList.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		2742C55A263C7A740095135C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2742C560263C801D0095135C /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2742C561263C801D0095135C /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		276DF3E32640526A00FB20DC /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		276DF3E52640546A00FB20DC /* FilteredListChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredListChallenges.swift; sourceTree = "<group>"; };
 		27DCA061263DC10800356C6C /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +70,9 @@
 				2742C561263C801D0095135C /* Movie+CoreDataProperties.swift */,
 				2742C54C263C7A730095135C /* CoreDataProjectApp.swift */,
 				2742C54E263C7A730095135C /* ContentView.swift */,
+				276DF3E32640526A00FB20DC /* ChallengesView.swift */,
 				27DCA061263DC10800356C6C /* FilteredList.swift */,
+				276DF3E52640546A00FB20DC /* FilteredListChallenges.swift */,
 				2742C550263C7A740095135C /* Assets.xcassets */,
 				2742C555263C7A740095135C /* Persistence.swift */,
 				2742C55A263C7A740095135C /* Info.plist */,
@@ -153,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276DF3E42640526A00FB20DC /* ChallengesView.swift in Sources */,
+				276DF3E62640546A00FB20DC /* FilteredListChallenges.swift in Sources */,
 				2742C556263C7A740095135C /* Persistence.swift in Sources */,
 				2742C54F263C7A730095135C /* ContentView.swift in Sources */,
 				2742C559263C7A740095135C /* CoreDataProject.xcdatamodeld in Sources */,

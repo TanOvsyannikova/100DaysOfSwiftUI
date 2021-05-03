@@ -35,7 +35,7 @@ struct ContentView: View {
             }
             
             FilteredList(filterKey: "title", filterValue: titleFilter) { (movie: Movie) in
-                Text("\(movie.wrappedTitle) \(movie.wrappedDirector)")
+                Text("\(movie.wrappedTitle) by \(movie.wrappedDirector)")
             }
             
             Button("Add") {
@@ -61,18 +61,18 @@ struct ContentView: View {
             
             Button("Add Examples") {
                 let first = Movie(context: self.moc2)
-                first.director = "A"
-                first.title = "B"
+                first.director = "Alice"
+                first.title = "Bob"
                 first.year = 1999
                 
                 let second = Movie(context: self.moc2)
-                second.director = "B"
-                second.title = "C"
+                second.director = "Brad"
+                second.title = "Cool"
                 second.year = 1999
                 
                 let third = Movie(context: self.moc2)
-                third.director = "A"
-                third.title = "C"
+                third.director = "Angela"
+                third.title = "Crown"
                 third.year = 1999
                 
                 try? self.moc2.save()
