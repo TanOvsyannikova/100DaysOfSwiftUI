@@ -9,25 +9,33 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State var users = [User]()
+    @ObservedObject var users = Users()
     
     var body: some View {
-        List(users) { user in
-            NavigationLink(destination: UserView(user: user)) {
-                VStack {
-                    Text(user.name)
-                        .font(.headline)
-                    Text(user.active ? "Online" : "Offline")
-                        .font(.subheadline)
+        NavigationView {
+            List {
+                ForEach(users.all) { person in
+                    NavigationLink(destination: UserView(users: users, user: person)) {
+                        VStack(alignment: .leading) {
+                            Text(person.name)
+                                .font(.headline)
+                            Text(person.isActive ? "Online" : "Offline")
+                                .font(.subheadline)
+                                .foregroundColor(person.isActive ? .green : .gray)
+                        }
+                    }
                 }
             }
+            .navigationBarTitle("All users")
         }
     }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
+    static let user1 = User(id: "1", isActive: true, name: "John", age: 32, company: "Apple LLC", email: "apple@", address: "Cupertino", about: "Cool guy", registered: "", friends: [], tags: [])
+    
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView(users: Users(users: [user1]))
     }
 }
