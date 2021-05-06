@@ -9,9 +9,14 @@ import SwiftUI
 
 struct FriendView: View {
     @ObservedObject var users: Users
-    var friend: Friend
+    var friend: User
     
     var body: some View {
-        Text(friend.name)
+        NavigationLink(destination: UserView(users: users, user: friend)) {
+            VStack(alignment: HorizontalAlignment.leading) {
+                Text(friend.name)
+                    .font(.headline)
+            }
+        }
     }
 }

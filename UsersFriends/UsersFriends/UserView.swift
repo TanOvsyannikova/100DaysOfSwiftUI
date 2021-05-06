@@ -30,7 +30,13 @@ struct UserView: View {
             }
             Section(header: Text("Friends")) {
                 ForEach (user.friends) { friend in
-                    FriendView(users: Users(), friend: friend)
+                    if let foundFriend = users.findUser(withID: friend.id) {
+                        FriendView(users: users, friend: foundFriend)
+                    }
+                    else {
+                        Text(friend.name)
+                    }
+                    
                 }
             }
         }

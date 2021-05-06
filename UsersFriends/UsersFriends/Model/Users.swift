@@ -45,4 +45,8 @@ class Users: ObservableObject {
         
     }
     
+    func findUser(withID ID: String) -> User? {
+        return all.first { $0.id == ID }
+    }
+    
 }
