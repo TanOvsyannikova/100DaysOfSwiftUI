@@ -17,6 +17,7 @@
 		27A551EC2642D4580066A980 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A551EB2642D4580066A980 /* Friend.swift */; };
 		27A551EE2642DBE00066A980 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A551ED2642DBE00066A980 /* UserView.swift */; };
 		27A551F02642DF1D0066A980 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A551EF2642DF1D0066A980 /* Users.swift */; };
+		27A551F426441E280066A980 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A551F326441E280066A980 /* FriendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		27A551EB2642D4580066A980 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		27A551ED2642DBE00066A980 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		27A551EF2642DF1D0066A980 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		27A551F326441E280066A980 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				27A551D52642D2990066A980 /* UsersFriendsApp.swift */,
 				27A551D72642D2990066A980 /* ContentView.swift */,
 				27A551ED2642DBE00066A980 /* UserView.swift */,
+				27A551F326441E280066A980 /* FriendView.swift */,
 				27A551F22642DF830066A980 /* Model */,
 				27A551D92642D29A0066A980 /* Assets.xcassets */,
 				27A551DE2642D29A0066A980 /* Persistence.swift */,
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A551F02642DF1D0066A980 /* Users.swift in Sources */,
+				27A551F426441E280066A980 /* FriendView.swift in Sources */,
 				27A551DF2642D29A0066A980 /* Persistence.swift in Sources */,
 				27A551D82642D2990066A980 /* ContentView.swift in Sources */,
 				27A551E22642D29A0066A980 /* UsersFriends.xcdatamodeld in Sources */,

@@ -29,7 +29,9 @@ struct UserView: View {
                 Text(user.address)
             }
             Section(header: Text("Friends")) {
-    
+                ForEach (user.friends) { friend in
+                    FriendView(users: Users(), friend: friend)
+                }
             }
         }
         .navigationBarTitle("\(user.name)", displayMode: .inline)
